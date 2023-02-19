@@ -1,6 +1,6 @@
-import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 public class Main {
@@ -44,8 +44,15 @@ public class Main {
 
         //worker.infoAboutChildren();
 
-        //Company oracle = new Company("Oracle");
-        //Company google = new Company("Google");
+        Company oracle = new Company("Oracle");
+        Map<String, String> holidays = new HashMap<>();
+        holidays.put("Chistmas", "25.12");
+        oracle.setHolidays(holidays);
+
+        Company google = new Company("Google");
+        Map<String, String> holidays2 = new HashMap<>();
+        holidays2.put("08.03", "09.05");
+        google.setHolidays(holidays2);
 
         //List<Company> companyList = new ArrayList<>();
         //companyList.add(oracle);

@@ -1,7 +1,8 @@
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Person {
+public abstract class Person implements Comparable<Person>{
+
     private String name;
     private int age;
     private int height;
@@ -115,6 +116,18 @@ public abstract class Person {
                 ", height=" + height +
                 ", weight=" + weight +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        int firstNameLen = name.length();
+        int secondNameLen = o.name.length();
+        if (firstNameLen != secondNameLen) {
+            return Integer.compare(firstNameLen, secondNameLen);
+        }
+        else {
+            return Integer.compare(age, o.age);
+        }
     }
 }
 
